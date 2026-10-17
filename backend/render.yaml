@@ -3,7 +3,7 @@ services:
     name: blinktask-api
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
-    dockerContext: .
+    dockerContext: ./backend
     healthCheckPath: /api/health
     envVars:
       - key: APP_ENV
@@ -18,8 +18,8 @@ services:
         sync: false
       - key: CORS_ORIGINS
         value: https://blinktask.in,https://www.blinktask.in
-  - type: pserv
-    name: blinktask-db
-    runtime: docker
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: .
+
+databases:
+  - name: blinktask-db
+    databaseName: blinktask
+    user: blinktask
