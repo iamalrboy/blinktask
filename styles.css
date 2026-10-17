@@ -50,3 +50,7 @@ body{overflow-x:hidden}
 @media(min-width:1100px){.hero{grid-template-columns:1.08fr .92fr;gap:64px}.art{min-height:470px}.projects{gap:30px}.project .visual{transform-origin:center}.project .visual:hover{transform:translateY(-5px) scale(1.008)}}
 @media(max-width:760px){.hero-copy .eyebrow,.hero-copy h1,.hero-copy .intro,.hero-copy .actions,.hero-copy .hero-meta{animation:none}.js-reveal{transform:translateY(12px)}.art .ring{animation-duration:36s}.services article:hover{transform:none;box-shadow:none}}
 @media(prefers-reduced-motion:reduce){.hero-copy .eyebrow,.hero-copy h1,.hero-copy .intro,.hero-copy .actions,.hero-copy .hero-meta{animation:none!important}.art .ring,.art .diamond,.art .square,.art .tiny,.ticker div{animation:none!important}.js-reveal{opacity:1!important;transform:none!important;transition:none!important}.services article,.project .visual,.steps article,.contact-card{transition:none!important}}
+
+/* Pointer movement is intentionally restrained and only activated by script on desktop. */
+.art{transform:translate(var(--pointer-x,0px),var(--pointer-y,0px));will-change:transform}
+@media(max-width:760px){.art{transform:none!important;will-change:auto}}
