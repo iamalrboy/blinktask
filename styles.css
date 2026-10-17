@@ -102,3 +102,25 @@ body{overflow-x:hidden}
 @media(min-width:1400px){.hero{min-height:800px}.hero h1{font-size:96px}}
 @media(max-width:760px){.hero{min-height:auto;padding-block:58px 44px;gap:34px}.hero h1{font-size:clamp(46px,12vw,70px);letter-spacing:-.075em}.art{min-height:350px}.art .r1{top:13%}.art .r2{top:24%}.services article{min-height:0}.contact:before{width:300px;height:300px}}
 @media(prefers-reduced-motion:reduce){.project:hover .chain-art i:nth-of-type(1),.project:hover .chain-art i:nth-of-type(2),.project:hover .chain-art i:nth-of-type(3),.project:hover .paper,.project:hover .brand-shape{transform:none}}
+
+/* Bespoke AK monogram art stage */
+.art-stage{background:#dedbd1;min-height:clamp(390px,42vw,540px);position:relative;isolation:isolate;color:#191b1e;overflow:hidden}
+.art-stage:before{content:"";position:absolute;inset:13px;border:1px solid #191b1e28;z-index:5;pointer-events:none}
+.stage-top,.stage-bottom{position:absolute;left:28px;right:28px;display:flex;justify-content:space-between;z-index:6;font-size:8px;font-weight:850;letter-spacing:.16em}
+.stage-top{top:28px}.stage-bottom{bottom:27px}
+.stage-vertical{position:absolute;left:26px;top:34%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8px;font-weight:850;letter-spacing:.18em;z-index:6}
+.stage-orbit{position:absolute;aspect-ratio:1;border:1px solid #191b1e38;border-radius:50%;left:50%;top:48%;translate:-50% -50%;width:76%;z-index:1}
+.orbit-one{border-style:dashed;animation:stage-spin 45s linear infinite}
+.orbit-two{width:56%;border-color:#315cf5a0;animation:stage-spin 32s linear infinite reverse}
+.stage-core{position:absolute;left:50%;top:48%;translate:-50% -50%;width:clamp(175px,22vw,255px);height:clamp(175px,22vw,255px);background:#315cf5;display:flex;align-items:center;justify-content:center;box-shadow:16px 16px 0 #191b1e12;transform:rotate(-8deg);transition:transform .65s cubic-bezier(.2,.8,.2,1);z-index:2}
+.art-stage:hover .stage-core{transform:rotate(0deg) scale(1.035)}
+.core-a,.core-k{font-size:clamp(100px,16vw,180px);line-height:.7;font-weight:900;letter-spacing:-.18em;color:#f4f2ec}
+.core-a{transform:translate(-3px,-4px)}.core-k{transform:translate(-3px,12px);font-family:Georgia,serif;font-style:italic;font-weight:400}
+.core-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:#191b1e;right:17%;top:16%}
+.stage-sticker{position:absolute;right:8%;top:20%;z-index:4;background:#f4f2ec;padding:14px 15px 12px;font-size:12px;font-weight:900;line-height:1.05;letter-spacing:-.04em;transform:rotate(7deg);box-shadow:5px 5px 0 #191b1e14;transition:transform .3s}
+.stage-sticker span{display:block;color:#315cf5;font-size:17px;margin-top:8px}
+.art-stage:hover .stage-sticker{transform:rotate(2deg) translateY(-4px)}
+.stage-coordinate{position:absolute;right:28px;bottom:70px;font-size:9px;font-weight:850;line-height:1.7;letter-spacing:.08em;text-align:right;z-index:6}
+@keyframes stage-spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.art-stage{min-height:350px}.stage-core{width:185px;height:185px}.stage-sticker{right:8%;top:19%}.stage-vertical{left:22px}.stage-top,.stage-bottom{left:22px;right:22px;font-size:7px}.stage-coordinate{right:22px;bottom:61px}}
+@media(prefers-reduced-motion:reduce){.orbit-one,.orbit-two{animation:none!important}.stage-core,.stage-sticker{transition:none!important}}
